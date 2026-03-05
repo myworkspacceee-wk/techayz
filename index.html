@@ -92,6 +92,10 @@
             margin-top: 2px;
         }
 
+        nav{
+            position: relative;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
@@ -126,6 +130,10 @@
 
         nav ul li a:hover::after {
             width: 100%;
+        }
+
+        .footer-logo-img,.header-logo-img{
+            width: 75%;
         }
 
         .demo-btn {
@@ -736,6 +744,8 @@
                 box-shadow: var(--shadow-lg);
                 border-top: 1px solid var(--gray);
                 gap: 20px;
+                z-index: 9999;
+                
             }
 
             nav ul.active {
@@ -827,8 +837,11 @@
         <div class="container header-container">
             <div class="logo-container">
                 <div class="logo">
-                    <div class="logo-main">techayz</div>
-                    <div class="logo-tagline">Accelerate Your Success</div>
+                    <!-- <div class="logo-main">techayz</div>
+                    <div class="logo-tagline">Accelerate Your Success</div> -->
+                    <a href="https://techayz.co.uk">
+                        <img src="images/techayz-menu-logo.svg" class="header-logo-img" alt="">
+                    </a>
                 </div>
             </div>
             
@@ -1141,7 +1154,7 @@
             <div class="contact-container">
                 <div class="contact-form">
                     <h3>Request a Demo</h3>
-                    <form id="demoForm">
+                    <!-- <form id="demoForm">
                         <div class="form-group">
                             <label for="fullName">Full Name</label>
                             <input type="text" id="fullName" class="form-control" required>
@@ -1188,7 +1201,82 @@
                         </div>
                         
                         <button type="submit" class="cta-button" style="width: 100%;">Submit Request</button>
-                    </form>
+                    </form> -->
+                    <form
+                        id="demoForm"
+                        name="contact"
+                        method="POST"
+                        data-netlify="true"
+                        data-netlify-honeypot="bot-field"
+                        >
+
+                        <!-- Required for Netlify -->
+                        <input type="hidden" name="form-name" value="contact">
+
+                        <!-- Honeypot -->
+                        <p style="display:none;">
+                            <label>
+                            Don’t fill this out:
+                            <input name="bot-field">
+                            </label>
+                        </p>
+
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companyName">Company Name</label>
+                            <input type="text" id="companyName" name="companyName" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="designation">Designation</label>
+                            <input type="text" id="designation" name="designation" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="product">Product Required</label>
+                            <select id="product" name="product" class="form-control" required>
+                            <option value="">Select a Product</option>
+                            <option value="cloud">Cloud Solutions</option>
+                            <option value="bpo">Business Process Outsourcing</option>
+                            <option value="data-ai">Data & AI</option>
+                            <option value="web-mobile">Web & Mobile Applications</option>
+                            <option value="infrastructure">Network Infrastructure</option>
+                            <option value="call-center">Call Center Solutions</option>
+                            <option value="cybersecurity">Cyber Security & ACS</option>
+                            <option value="data-center">Cloud and Data Center Solutions</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="region">Region</label>
+                            <input type="text" id="region" name="region" class="form-control" required>
+                        </div>
+
+                        <button type="submit" class="cta-button" style="width:100%;">
+                            Submit Request
+                        </button>
+
+                        <!-- Success Message (Netlify native flow ke baad JS se show karenge) -->
+                        <!-- <p id="formSuccess" style="display:none; color:green; margin-top:15px;">
+                            ✅ Thank you! Your request has been submitted successfully.
+                        </p> -->
+
+                        </form>
+
                 </div>
                 
                 <div class="contact-info">
@@ -1206,6 +1294,8 @@
                         <p style="margin-top: 15px;"><strong>U.A.E:</strong><br>ln5 tech Building,<br>HD 10A Second Floor,<br>Dubai Internet City,<br>Dubai, U.A.E.</p>
                         
                         <p style="margin-top: 15px;"><strong>Qatar:</strong><br>The Eighteen Tower,<br>Zone 56, Street 303, Building 230,<br>Lusail Marina, Qatar.</p>
+
+                        <p style="margin-top: 15px;"><strong>Pakistan:</strong><br>Office # 17,1st Floor,<br>Commercial Avenue, PECHS Block-2,<br>Karachi. Pakistan.</p>
                     </div>
                     
                     <div class="office-location">
@@ -1226,8 +1316,11 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="footer-logo">
-                        <div class="logo">techayz</div>
-                        <div class="logo-tagline">Accelerate Your Success</div>
+                        <!-- <div class="logo">techayz</div>
+                        <div class="logo-tagline">Accelerate Your Success</div> -->
+                        <a href="https://techayz.co.uk">
+                            <img src="images/techayz-footer-logo-2.svg" class="footer-logo-img" alt="">
+                        </a>
                     </div>
                     <p>Stream Line Your Business Needs with Our Innovative Solutions.</p>
                 </div>
@@ -1248,7 +1341,7 @@
                     <h3>Contact Us</h3>
                     <p><i class="fas fa-map-marker-alt"></i> 124 City Road, London, EC1v 2NX, UK</p>
                     <p><i class="fas fa-envelope"></i> info@techayz.co.uk</p>
-                    <p><i class="fas fa-globe"></i> Global presence across UK, Saudi Arabia, UAE, and Qatar</p>
+                    <p><i class="fas fa-globe"></i> Global presence across UK, Saudi Arabia, UAE, Qatar and Pakistan</p>
                 </div>
             </div>
             
@@ -1258,7 +1351,7 @@
         </div>
     </footer>
 
-    <script>
+    <!-- <script>
         // Mobile menu toggle
         document.getElementById('mobileMenuBtn').addEventListener('click', function() {
             document.getElementById('mainMenu').classList.toggle('active');
@@ -1299,11 +1392,11 @@
         });
         
         // Form submission
-        document.getElementById('demoForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your demo request! We will contact you shortly.');
-            this.reset();
-        });
+        //document.getElementById('demoForm').addEventListener('submit', function(e) {
+        //    e.preventDefault();
+        //    alert('Thank you for your demo request! We will contact you shortly.');
+        //    this.reset();
+        //});
         
         // Show About page
         function showAboutPage() {
@@ -1392,6 +1485,140 @@
             if(!menu.contains(e.target) && !menuBtn.contains(e.target) && menu.classList.contains('active')) {
                 menu.classList.remove('active');
                 menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+    </script> -->
+
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainMenu = document.getElementById('mainMenu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mainMenu.classList.toggle('active');
+            this.innerHTML = this.innerHTML.includes('fa-bars') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Inner page tracking
+        let isInnerPageOpen = false;
+
+        // Show About page
+        function showAboutPage() {
+            isInnerPageOpen = true;
+
+            // Hide all main sections
+            document.querySelectorAll('section:not(.inner-page)').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // Hide footer
+            document.querySelector('footer').style.display = 'none';
+
+            // Show About
+            document.getElementById('about').style.display = 'block';
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            // Close mobile menu if open
+            mainMenu.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+
+        // Go back to home
+        function goBackToHome() {
+            isInnerPageOpen = false;
+
+            // Show main sections
+            document.querySelectorAll('section:not(.inner-page)').forEach(section => {
+                section.style.display = 'block';
+            });
+
+            // Hide inner pages
+            document.querySelectorAll('.inner-page').forEach(page => {
+                page.style.display = 'none';
+            });
+
+            // Show footer
+            document.querySelector('footer').style.display = 'block';
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Back to home button in About
+        document.getElementById('backToHomeBtn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            goBackToHome();
+        });
+
+        // Smooth scroll for all menu links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                // Special handling for inner-page links
+                if(targetId === '#about' || targetId === '#projects-detail') {
+                    e.preventDefault();
+                    if(targetId === '#about') showAboutPage();
+                    return;
+                }
+
+                // If About page is open, close it first
+                if(isInnerPageOpen) {
+                    e.preventDefault();
+                    goBackToHome();
+                }
+
+                // Normal smooth scroll
+                if(targetElement) {
+                    e.preventDefault();
+                    setTimeout(() => {
+                        mainMenu.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }, 50);
+
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Service cards hover effect
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.borderColor = 'var(--primary)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.borderColor = 'var(--gray)';
+            });
+        });
+
+        // Product categories hover effect
+        document.querySelectorAll('.product-category').forEach(category => {
+            category.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+            });
+            category.addEventListener('mouseleave', function() {
+                this.style.boxShadow = 'var(--shadow)';
+            });
+        });
+
+        // Project details function
+        function showProjectDetail(project) {
+            alert('Project details for ' + project + ' would open in a detailed view.');
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if(!mainMenu.contains(e.target) && !mobileMenuBtn.contains(e.target) && mainMenu.classList.contains('active')) {
+                mainMenu.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             }
         });
     </script>
